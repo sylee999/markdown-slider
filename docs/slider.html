@@ -50,7 +50,7 @@
         var imgs = document.querySelectorAll(".remark-slide-container img");
         imgs.forEach((img) => {
           var imgSrc = img.attributes["src"].value;
-          if (!imgSrc.startWith("http://") && !imgSrc.startWith("https://")) {
+          if (!imgSrc.startsWith("http://") && !imgSrc.startsWith("https://")) {
             var path = mdUrl.slice(0, mdUrl.lastIndexOf('/'))
             img.attributes["src"].value = path + img.attributes["src"].value
           }
