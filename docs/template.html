@@ -22,8 +22,6 @@
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
     <script>
-      var slideshow = remark.create();
-
       var getParameters = function (paramName) {
           // 리턴값을 위한 변수 선언
           var returnValue;
@@ -60,6 +58,8 @@
               // console.log(text);
               // class: center, middle
               document.getElementById("source").value = text;
+        
+              var slideshow = remark.create();
           });
     </script>
   </body>
