@@ -44,23 +44,30 @@
 
       var mdUrl = getParameters("url");
 
-      fetch(mdUrl)
-          .then(function (response) {
-              var contentType = response.headers.get("content-type");
-              if(contentType && contentType.indexOf("text/plain") !== -1) {
-                  return response.text();
-              } else {
-                  console.log("Oops, we haven't got MD plain text!");
-              }
-          })
-          .then(function (text) {
-              // 템플릿 내에 MD 본문을 주입한다.
-              // console.log(text);
-              // class: center, middle
-              document.getElementById("source").value = text;
+      var slideshow = remark.create({
+        sourceUrl: mdUrl
+      });      
+
+//       fetch(mdUrl)
+//           .then(function (response) {
+//               var contentType = response.headers.get("content-type");
+//               if(contentType && contentType.indexOf("text/plain") !== -1) {
+//                   return response.text();
+//               } else {
+//                   console.log("Oops, we haven't got MD plain text!");
+//               }
+//           })
+//           .then(function (text) {
+//               // 템플릿 내에 MD 본문을 주입한다.
+//               // console.log(text);
+//               // class: center, middle
+//               document.getElementById("source").value = text;
         
-              var slideshow = remark.create();
-          });
+//               var slideshow = remark.create({
+//                 sourceUrl: 'markdown.md'
+//               });      
+// //               var slideshow = remark.create();
+//           });
     </script>
   </body>
 </html>
