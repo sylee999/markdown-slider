@@ -45,11 +45,9 @@
       };
 
       var mdUrl = getParameters("url");
-      console.log(`mark-down url : ${mdUrl}`);
-      
+
       fetch(mdUrl)
           .then(function (response) {
-              console.log("fetch success");
               var contentType = response.headers.get("content-type");
               if(contentType && contentType.indexOf("text/plain") !== -1) {
                   return response.text();
@@ -61,7 +59,7 @@
               // 템플릿 내에 MD 본문을 주입한다.
               console.log(text);
               // class: center, middle
-              document.getElementById("source").innerText = text;
+              document.getElementById("source").value = text;
           });
     </script>
   </body>
