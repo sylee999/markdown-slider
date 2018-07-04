@@ -47,10 +47,13 @@
       var slideshow = remark.create({
         sourceUrl: mdUrl
       }, function(slideshow) {
-        
+        var imgs = document.querySelectorAll(".remark-slide-container img");
         imgs.forEach((img) => {
-          var path = mdUrl.slice(0, mdUrl.lastIndexOf('/'))
-          img.attributes["src"].value = path + img.attributes["src"].value
+          var imgSrc = img.attributes["src"].value;
+          if (!imgSrc.startWith("http://") && !imgSrc.startWith("https://")) {
+            var path = mdUrl.slice(0, mdUrl.lastIndexOf('/'))
+            img.attributes["src"].value = path + img.attributes["src"].value
+          }
         })
       });      
     </script>
