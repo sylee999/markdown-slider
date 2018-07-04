@@ -46,6 +46,12 @@
 
       var slideshow = remark.create({
         sourceUrl: mdUrl
+      }, function(slideshow) {
+        
+        imgs.forEach((img) => {
+          var path = mdUrl.slice(0, mdUrl.lastIndexOf('/'))
+          img.attributes["src"].value = path + img.attributes["src"].value
+        })
       });      
     </script>
   </body>
