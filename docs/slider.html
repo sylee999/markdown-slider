@@ -45,7 +45,7 @@
           var imgSrc = img.attributes["src"].value;
           if (!imgSrc.startsWith("http://") && !imgSrc.startsWith("https://")) {
             var path = mdUrl.slice(0, mdUrl.lastIndexOf('/'))
-            img.attributes["src"].value = path + img.attributes["src"].value
+            img.attributes["src"].value = path + '/' + img.attributes["src"].value
           }
         })
       });      
